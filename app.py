@@ -41,9 +41,8 @@ def success():
 # ---------- Home ----------
 @app.route("/")
 def home():
-    return "<h3>Welcome! Visit <a href='/api'>/api</a> or <a href='/form'>/form</a></h3>"
-
-
+    "<h3>Welcome! Visit <a href='/api'>/api</a> or <
+ter_2
 @app.route("/submittodoitem", methods=["POST"])
 def submittodoitem():
     item_name = request.form.get("itemName")
@@ -58,6 +57,11 @@ def submittodoitem():
     })
 
     return jsonify({"message": "To-Do item added successfully!"}), 201
+
+@app.route("/todo")
+def todo():
+    return render_template("todo.html")
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
