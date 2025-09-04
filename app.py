@@ -43,5 +43,9 @@ def success():
 def home():
     return "<h3>Welcome! Visit <a href='/api'>/api</a> or <a href='/form'>/form</a></h3>"
 
+@app.route("/todo")
+def todo():
+    return render_template("todo.html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
